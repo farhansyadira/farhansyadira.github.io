@@ -21,7 +21,7 @@
     <center><p>Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p></center>
 
     <center><h4>Menu</h4></center>
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -31,12 +31,42 @@
 </head>
 <body>
     <div class="container">
-        <button id="myButton" class="button">Tentang Saya
-        <a href="aboutme.html"</a></button>
+        <button id="myButton" class="button">Tentang Saya</button>
     </div>
-    <script src="script.js"></script>
+    <script src="aboutme.html"></script>
 </body>
 </html>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
            
        
    </div>
