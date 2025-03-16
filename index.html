@@ -21,16 +21,46 @@
     <center><p>Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p></center>
 
     <center><h4>Menu</h4></center>
-
-    <body>
-    <a href="aboutme.html" style="text-decoration: none;">
-        <button style="padding: 10px 20px; font-size: 16px; center">Tentang Saya</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tombol</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Mengatur tinggi halaman agar memenuhi viewport */
+            margin: 0; /* Menghilangkan margin default */
+            background-color: #f0f0f0; /* Warna latar belakang */
+        }
+        a {
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; /* Menghilangkan border */
+            border-radius: 5px; /* Membuat sudut tombol melengkung */
+            cursor: pointer; /* Mengubah kursor saat hover */
+        }
+        button:hover {
+            background-color: #0056b3; /* Warna tombol saat hover */
+        }
+    </style>
+</head>
+<body>
+    <a href="aboutme.html">
+        <button>Tentang Saya</button>
     </a>
      
-    <a href="contactus.html" style="text-decoration: none;">
-        <button style="padding: 10px 20px; font-size: 16px; center">Kritik dan Saran</button>
+    <a href="contactus.html">
+        <button>Kritik dan Saran</button>
     </a>
-    </body>
+</body>
+
    
 <a href="https://library.usu.ac.id/" target= "_blank" > Perpustakaan USU </a>
    
