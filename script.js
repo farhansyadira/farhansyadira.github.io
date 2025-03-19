@@ -1,7 +1,7 @@
  function gotolib() {
     Swal.fire({
-      title: "Kunjungi Halaman Perpustakaan USU?",
-      text: "Anda akan diarahkan ke halaman web perpustakaan.",
+      title: "Kunjungi Halaman Perpustakaan Rujukan?",
+      text: "Anda akan dialihkan ke halaman web perpustakaan Rujukan.",
       icon: "question",
       showCancelButton: true,
       confirmButtonText: "Ya, Lanjutkan!",
@@ -10,7 +10,7 @@
       if (result.isConfirmed) {
         Swal.fire({
           title: "Mengalihkan...",
-          text: "Mohon tunggu sebentar.",
+          text: "Permintaan Anda Sedang Diproses.",
           icon: "success",
           showConfirmButton: false,
           timer: 1500, // Tutup otomatis setelah 1.5 detik
