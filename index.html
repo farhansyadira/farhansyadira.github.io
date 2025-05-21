@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- SweetAlert2 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Google Fonts (optional) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
@@ -19,18 +19,31 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-r from-pink-200 to-rose-200 min-h-screen flex flex-col justify-between">
+<body class="bg-gradient-to-r from-pink-200 to-rose-200 min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-900 text-white px-6 py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold">📚 Farhan Library</div>
+      <div class="space-x-6 text-sm md:text-base">
+        <a href="index.html" class="hover:text-pink-300 transition">Beranda</a>
+        <a href="aboutme.html" class="hover:text-pink-300 transition">Tentang Saya</a>
+        <a href="contactus.html" class="hover:text-pink-300 transition">Kritik & Saran</a>
+        <a href="#" onclick="gotolib()" class="hover:text-pink-300 transition">Perpustakaan Rujukan</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Header -->
   <header class="text-center py-10">
-    <h1 class="text-4xl font-bold text-gray-800">Farhan Library</h1>
+    <h1 class="text-4xl font-bold text-gray-800">Selamat Datang di Farhan Library</h1>
     <h2 class="text-xl text-gray-700 mt-2">Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
     <p class="text-gray-600 mt-2">Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
   </header>
 
   <!-- Menu -->
   <main class="flex flex-col items-center space-y-6">
-    <h4 class="text-lg font-semibold text-gray-800">Menu</h4>
+    <h4 class="text-lg font-semibold text-gray-800">Menu Cepat</h4>
     <div class="flex flex-wrap justify-center gap-4">
       <button onclick="window.location.href='aboutme.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Tentang Saya</button>
       <button onclick="window.location.href='contactus.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Kritik dan Saran</button>
@@ -45,7 +58,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-4 mt-10 animate-fadeIn">
+  <footer class="bg-gray-900 text-white text-center py-4 mt-10">
     &copy; WEB Praktik Farhan Marzuq Syadira, 2025
   </footer>
 
