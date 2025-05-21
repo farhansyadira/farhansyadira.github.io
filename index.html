@@ -26,7 +26,6 @@
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-2xl font-bold">📘 Farhan Library</div>
       <div class="space-x-6 text-sm md:text-base flex items-center relative group">
-        <!-- Dropdown Menu -->
         <div class="relative group">
           <button class="hover:text-amber-300 transition focus:outline-none">
             Beranda ▾
@@ -93,6 +92,40 @@
       const angka2 = parseFloat(document.getElementById('angka2').value) || 0;
       const hasil = angka1 * angka2;
       document.getElementById('hasilPerkalian').textContent = hasil;
+    }
+
+    // Fungsi cookie
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      const cname = name + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+      }
+      return "";
+    }
+
+    // Tampilkan popup jika belum ada cookie
+    window.onload = function() {
+      const visited = getCookie("visited");
+      if (!visited) {
+        Swal.fire({
+          title: "Selamat Datang!",
+          text: "Terima kasih telah mengunjungi Farhan Library.",
+          icon: "success",
+          confirmButtonText: "Lanjutkan"
+        });
+        setCookie("visited", "true", 7); // Cookie aktif 7 hari
+      }
     }
   </script>
 
