@@ -1,81 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
- <style>
-        body {
-            margin: 0;
-            font-family: times new roman, sans-serif;
-            text-align: center;
-            background-color: #f0b3b3;
-           
-        }
-         /* Gaya untuk tombol */
-        .my-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin right: 20px
-        }
-
-        .my-button:hover {
-            background-color: grey;
-        }
-    
- footer {
-            background-color: black;
-            color: white;
-            padding: 15px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            font-size: 16px;
-            opacity: 0;
-            animation: slideUp 1.5s ease-in-out 1.5s forwards;
-     }
-     @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-     }
-     @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farhan Library</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
     }
-
- </style>
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
-<body>    
+<body class="bg-gradient-to-r from-pink-200 to-rose-200 min-h-screen flex flex-col justify-between">
 
-<h1>Farhan Library</h1> 
-   <h2>Saya Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
-   <p>Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
-    
-   <h4>Menu</h4>
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-gray-800">Farhan Library</h1>
+    <h2 class="text-xl text-gray-700 mt-2">Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
+    <p class="text-gray-600 mt-2">Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
+  </header>
 
-    <button class="my-button" onclick="window.location.href='aboutme.html'">Tentang Saya</button>
-    <button class="my-button" onclick="window.location.href='contactus.html'">Kritik dan Saran</button>
+  <!-- Menu -->
+  <main class="flex flex-col items-center space-y-6">
+    <h4 class="text-lg font-semibold text-gray-800">Menu</h4>
+    <div class="flex flex-wrap justify-center gap-4">
+      <button onclick="window.location.href='aboutme.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Tentang Saya</button>
+      <button onclick="window.location.href='contactus.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Kritik dan Saran</button>
+    </div>
 
-
-    
-<p>Kunjungi Perpustakaan Rujukan</p>
-     <button class="my-button" id="libraryButton" onclick="gotolib()">
+    <div class="text-center mt-6">
+      <p class="mb-3 text-gray-700">Kunjungi Perpustakaan Rujukan</p>
+      <button onclick="gotolib()" class="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">
         Kunjungi Perpustakaan Rujukan
-    </button>
+      </button>
+    </div>
+  </main>
 
-    
-<footer>
-        <p>&copy; WEB Praktik Farhan Marzuq Syadira, 2025</p>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4 mt-10 animate-fadeIn">
+    &copy; WEB Praktik Farhan Marzuq Syadira, 2025
+  </footer>
+
+  <!-- JS Function -->
+  <script>
+    function gotolib() {
+      Swal.fire({
+        title: 'Menuju Perpustakaan Rujukan',
+        text: 'Kamu akan diarahkan ke situs resmi Perpustakaan Nasional.',
+        icon: 'info',
+        confirmButtonText: 'Lanjutkan',
+        confirmButtonColor: '#1f2937'
+      }).then(() => {
+        window.open('https://www.perpusnas.go.id', '_blank');
+      });
+    }
+  </script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="script.js"></script>
 </html>
-
-
