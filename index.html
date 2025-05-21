@@ -19,7 +19,7 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-r from-blue-50 to-blue-100 flex flex-col min-h-screen text-gray-800">
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 flex flex-col min-h-screen text-white">
 
   <!-- Navigation Bar -->
   <nav class="bg-blue-800 text-white px-6 py-4 shadow-md">
@@ -28,7 +28,7 @@
       <div class="space-x-6 text-sm md:text-base flex items-center relative group">
         <!-- Dropdown Menu -->
         <div class="relative group">
-          <button class="hover:text-blue-300 transition focus:outline-none">
+          <button class="hover:text-amber-300 transition focus:outline-none">
             Beranda ▾
           </button>
           <div class="absolute hidden group-hover:block bg-white text-blue-900 rounded shadow-lg mt-2 min-w-[180px] z-10">
@@ -43,23 +43,34 @@
   </nav>
 
   <!-- Header -->
-  <header class="text-center py-10 bg-white">
+  <header class="text-center py-10">
     <h1 class="text-4xl font-bold text-blue-900">Selamat Datang di Farhan Library</h1>
     <h2 class="text-xl text-blue-800 mt-2">Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
     <p class="text-blue-700 mt-2">Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
   </header>
 
-  <!-- Menu -->
-  <main class="flex flex-col items-center space-y-6 flex-grow bg-white py-10">
-    <h4 class="text-lg font-semibold text-blue-800">Menu Cepat</h4>
-    <div class="flex flex-wrap justify-center gap-4">
-      <button onclick="window.location.href='aboutme.html'" class="px-5 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition">Tentang Saya</button>
-      <button onclick="window.location.href='contactus.html'" class="px-5 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition">Kritik dan Saran</button>
+  <!-- Perkalian Otomatis -->
+  <main class="flex-grow flex flex-col items-center px-4">
+    <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-md text-blue-900">
+      <h3 class="text-xl font-semibold mb-4 text-center">Perkalian Otomatis</h3>
+      <div class="space-y-4">
+        <div>
+          <label for="angka1" class="block font-medium">Angka Pertama:</label>
+          <input type="number" id="angka1" class="w-full p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" oninput="hitungPerkalian()">
+        </div>
+        <div>
+          <label for="angka2" class="block font-medium">Angka Kedua:</label>
+          <input type="number" id="angka2" class="w-full p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" oninput="hitungPerkalian()">
+        </div>
+        <div class="text-center mt-4">
+          <p class="text-lg font-semibold">Hasil: <span id="hasilPerkalian">0</span></p>
+        </div>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white text-center py-4">
+  <footer class="bg-blue-900 text-white text-center py-4 mt-10">
     &copy; WEB Praktik Farhan Marzuq Syadira, 2025
   </footer>
 
@@ -76,6 +87,14 @@
         window.open('https://www.perpusnas.go.id', '_blank');
       });
     }
+
+    function hitungPerkalian() {
+      const angka1 = parseFloat(document.getElementById('angka1').value) || 0;
+      const angka2 = parseFloat(document.getElementById('angka2').value) || 0;
+      const hasil = angka1 * angka2;
+      document.getElementById('hasilPerkalian').textContent = hasil;
+    }
   </script>
+
 </body>
 </html>
