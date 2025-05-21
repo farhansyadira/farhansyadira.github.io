@@ -115,18 +115,40 @@
     }
 
     // Tampilkan popup jika belum ada cookie
-    window.onload = function() {
-      const visited = getCookie("visited");
-      if (!visited) {
-        Swal.fire({
-          title: "Selamat Datang!",
-          text: "Terima kasih telah mengunjungi Farhan Library.",
-          icon: "success",
-          confirmButtonText: "Lanjutkan"
-        });
-        setCookie("visited", "true", 7); // Cookie aktif 7 hari
+    window.onload = function () {
+  const consent = getCookie("cookieConsent");
+  if (!consent) {
+    Swal.fire({
+      title: "Privasi & Cookie",
+      text: "Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. Apakah Anda menyetujui penggunaan cookie?",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Terima Semua",
+      cancelButtonText: "Tolak",
+      confirmButtonColor: "#2563eb",
+      cancelButtonColor: "#d33"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCookie("cookieConsent", "accepted", 30); // Simpan cookie selama 30 hari
+        Swal.fire("Terima kasih!", "Cookie telah diaktifkan.", "success");
+      } else {
+        Swal.fire("Cookie Ditolak", "Beberapa fitur mungkin dibatasi.", "warning");
       }
+    });
+  } else {
+    // Jika sudah disetujui, tampilkan sambutan hanya 1 kali
+    const visited = getCookie("visited");
+    if (!visited) {
+      Swal.fire({
+        title: "Selamat Datang!",
+        text: "Terima kasih telah mengunjungi Farhan Library.",
+        icon: "success",
+        confirmButtonText: "Lanjutkan"
+      });
+      setCookie("visited", "true", 7); // Cookie aktif 7 hari
     }
+  }
+};
   </script>
 
 </body>
