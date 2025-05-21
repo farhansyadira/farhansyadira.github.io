@@ -19,46 +19,47 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-r from-pink-200 to-rose-200 min-h-screen flex flex-col">
+<body class="bg-gradient-to-r from-blue-100 to-blue-200 flex flex-col min-h-screen">
 
   <!-- Navigation Bar -->
-  <nav class="bg-gray-900 text-white px-6 py-4 shadow-md">
+  <nav class="bg-blue-900 text-white px-6 py-4 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold">📚 Farhan Library</div>
-      <div class="space-x-6 text-sm md:text-base">
-        <a href="index.html" class="hover:text-pink-300 transition">Beranda</a>
-        <a href="aboutme.html" class="hover:text-pink-300 transition">Tentang Saya</a>
-        <a href="contactus.html" class="hover:text-pink-300 transition">Kritik & Saran</a>
-        <a href="#" onclick="gotolib()" class="hover:text-pink-300 transition">Perpustakaan Rujukan</a>
+      <div class="text-2xl font-bold">📘 Farhan Library</div>
+      <div class="space-x-6 text-sm md:text-base flex items-center relative group">
+        <!-- Dropdown Menu -->
+        <div class="relative group">
+          <button class="hover:text-blue-300 transition focus:outline-none">
+            Beranda ▾
+          </button>
+          <div class="absolute hidden group-hover:block bg-white text-blue-900 rounded shadow-lg mt-2 min-w-[180px] z-10">
+            <a href="index.html" class="block px-4 py-2 hover:bg-blue-100">Halaman Utama</a>
+            <a href="#" onclick="gotolib()" class="block px-4 py-2 hover:bg-blue-100">Perpustakaan Rujukan</a>
+          </div>
+        </div>
+        <a href="aboutme.html" class="hover:text-blue-300 transition">Tentang Saya</a>
+        <a href="contactus.html" class="hover:text-blue-300 transition">Kritik & Saran</a>
       </div>
     </div>
   </nav>
 
   <!-- Header -->
   <header class="text-center py-10">
-    <h1 class="text-4xl font-bold text-gray-800">Selamat Datang di Farhan Library</h1>
-    <h2 class="text-xl text-gray-700 mt-2">Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
-    <p class="text-gray-600 mt-2">Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
+    <h1 class="text-4xl font-bold text-blue-900">Selamat Datang di Farhan Library</h1>
+    <h2 class="text-xl text-blue-800 mt-2">Mahasiswa Program Studi Perpustakaan dan Sains Informasi</h2>
+    <p class="text-blue-700 mt-2">Web ini adalah pemenuhan tugas Mata Kuliah Pengembangan Web</p>
   </header>
 
   <!-- Menu -->
-  <main class="flex flex-col items-center space-y-6">
-    <h4 class="text-lg font-semibold text-gray-800">Menu Cepat</h4>
+  <main class="flex flex-col items-center space-y-6 flex-grow">
+    <h4 class="text-lg font-semibold text-blue-800">Menu Cepat</h4>
     <div class="flex flex-wrap justify-center gap-4">
-      <button onclick="window.location.href='aboutme.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Tentang Saya</button>
-      <button onclick="window.location.href='contactus.html'" class="px-5 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">Kritik dan Saran</button>
-    </div>
-
-    <div class="text-center mt-6">
-      <p class="mb-3 text-gray-700">Kunjungi Perpustakaan Rujukan</p>
-      <button onclick="gotolib()" class="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition">
-        Kunjungi Perpustakaan Rujukan
-      </button>
+      <button onclick="window.location.href='aboutme.html'" class="px-5 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">Tentang Saya</button>
+      <button onclick="window.location.href='contactus.html'" class="px-5 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">Kritik dan Saran</button>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-4 mt-10">
+  <footer class="bg-blue-900 text-white text-center py-4">
     &copy; WEB Praktik Farhan Marzuq Syadira, 2025
   </footer>
 
@@ -70,7 +71,7 @@
         text: 'Kamu akan diarahkan ke situs resmi Perpustakaan Nasional.',
         icon: 'info',
         confirmButtonText: 'Lanjutkan',
-        confirmButtonColor: '#1f2937'
+        confirmButtonColor: '#2563eb'
       }).then(() => {
         window.open('https://www.perpusnas.go.id', '_blank');
       });
