@@ -1,85 +1,67 @@
-
 <!DOCTYPE html>
-<html lang="en">
- <head>
-    <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Kritik dan Saran</title>
- <style>
-        body {
-            margin: 0;
-            font-family: times new roman, sans-serif;
-            text-align: center;
-            background-color:  #f0b3b3;
-        }
-         /* Gaya untuk tombol */
-        .my-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin right: 20px
-        }
-
-        .my-button:hover {
-            background-color: grey;
-        }
-	 footer {
-            background-color: black;
-            color: white;
-            padding: 15px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            font-size: 16px;
-            opacity: 0;
-            animation: slideUp 1.5s ease-in-out 1.5s forwards;
-     }
-     @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-     }
-     @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kritik dan Saran - Farhan Library</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
     }
-        
-       
- </style>
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
-<body>
-	<h1>Kritik dan Saran</h1>
-	<p>Silahkan berikan kritik dan saran untuk Farhan Library melalui form berikut:</p>
-<form class="formulir form-container"action="https://formsubmit.co/farhansyadira25@gmail.com" method="POST">
-    
-</form>
-	
-    <form>
-        <label for="name">Nama:</label><br>
-        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required><br><br>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex flex-col">
 
-        <label for="Email">Email:</label><br>
-        <input type="Email" id="Email" name="Email" placeholder="Masukkan Email Anda" required><br><br>
+  <!-- Navbar -->
+  <nav class="bg-blue-800 text-white px-6 py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold">📘 Farhan Library</div>
+      <div class="space-x-6 text-sm md:text-base">
+        <a href="index.html" class="hover:text-blue-300 transition">Beranda</a>
+        <a href="aboutme.html" class="hover:text-blue-300 transition">Tentang Saya</a>
+        <a href="contactus.html" class="hover:text-blue-300 transition">Kritik & Saran</a>
+      </div>
+    </div>
+  </nav>
 
-        <label for="Kritik dan Saran">Kritik dan Saran:</label><br>
-        <textarea id="Kritik dan Saran" name="Kritik dan Saran" rows="5" placeholder="Masukkan Kritik dan Saran" required></textarea><br><br>
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-3xl font-bold text-blue-900">Kritik dan Saran</h1>
+    <p class="text-blue-700 mt-2">Silakan berikan masukan Anda untuk pengembangan Farhan Library.</p>
+  </header>
 
-        <button type="submit">Kirim</button>
+  <!-- Formulir -->
+  <main class="flex-grow flex justify-center items-center px-4">
+    <form action="https://formsubmit.co/farhansyadira25@gmail.com" method="POST" class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg space-y-4">
+      <div>
+        <label for="name" class="block text-blue-800 font-semibold">Nama:</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+      </div>
+      <div>
+        <label for="email" class="block text-blue-800 font-semibold">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+      </div>
+      <div>
+        <label for="message" class="block text-blue-800 font-semibold">Kritik dan Saran:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Masukkan kritik dan saran" required class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+      </div>
+      <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+        Kirim
+      </button>
     </form>
+  </main>
 
-    <h4>Menu</h4>
-    <body>
-	 <button class="my-button" onclick="window.location.href='index.html'">Halaman Utama</button>
-         <button class="my-button" onclick="window.location.href='aboutme.html'">Tentang Saya</button>
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white text-center py-4 mt-10">
+    &copy; WEB Praktik Farhan Marzuq Syadira, 2025
+  </footer>
 
-<footer>
-        <p>&copy; WEB Praktik Farhan Marzuq Syadira, 2025</p>
-    </footer>
 </body>
 </html>
-            
-  
